@@ -2,7 +2,7 @@ import React from "react";
 
 function AboutMe() {
   return (
-    <div id="about" className="flex flex-col gap-2">
+    <div id="about" className="flex flex-col gap-3">
       <p>
         With over 2 years of hands-on experience, I{`'`}ve developed a solid
         foundation in front-end development, starting with HTML, CSS, and

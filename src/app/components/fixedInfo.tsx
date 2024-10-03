@@ -44,7 +44,7 @@ const navigations: string[] = ["About", "Happiness", "Projects"];
 function FixedInfo() {
   return (
     <div className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col">
         <div className="flex flex-col gap-3">
           <p className="text-5xl font-bold">Lukasz Szpilowski</p>
           <p className="text-xl font-bold">Freelance Frontend Developer</p>

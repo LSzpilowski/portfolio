@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AboutMe from "./components/aboutMe";
 import FixedInfo from "./components/fixedInfo";
 import HappinessForm from "./components/happiness";
@@ -15,6 +16,36 @@ export default function Home() {
           <AboutMe />
           <HappinessForm />
           <ProjectList />
+          <div className="opacity-80">
+            <p>
+              Partly designed in
+              <Link href="https://www.figma.com/" className="font-bold">
+                {" "}
+                Figma
+              </Link>{" "}
+              and partly on paper. Coded in
+              <Link href="https://code.visualstudio.com/" className="font-bold">
+                {" "}
+                Visual Studio Code
+              </Link>
+              . Built with
+              <Link href="https://nextjs.org/" className="font-bold">
+                {" "}
+                Next.js
+              </Link>
+              and
+              <Link href="https://tailwindcss.com/" className="font-bold">
+                {" "}
+                Tailwind CSS
+              </Link>
+              , deployed with
+              <Link href="https://vercel.com/" className="font-bold">
+                {" "}
+                Vercel
+              </Link>
+              .
+            </p>
+          </div>
         </div>
       </div>
     </div>
