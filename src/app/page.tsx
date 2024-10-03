@@ -1,6 +1,7 @@
 import AboutMe from "./components/aboutMe";
 import FixedInfo from "./components/fixedInfo";
 import HappinessForm from "./components/happiness";
+import ProjectList from "./components/projectList";
 
 export default function Home() {
   return (
@@ -9,10 +10,11 @@ export default function Home() {
         <FixedInfo />
         <div
           id="content"
-          className="pt-24 lg:w-1/2 lg:py-24 flex flex-col gap-16 w-full"
+          className="pt-24 lg:w-1/2 lg:py-24 flex flex-col gap-16 w-full "
         >
           <AboutMe />
           <HappinessForm />
+          <ProjectList />
         </div>
       </div>
     </div>
