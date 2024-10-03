@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 interface ISocials {
   href: string;
@@ -42,9 +45,36 @@ const socials: ISocials[] = [
 const navigations: string[] = ["About", "Happiness", "Projects"];
 
 function FixedInfo() {
+  const [activeSection, setActiveSection] = useState("About");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let currentSection = "";
+
+      for (const id of navigations) {
+        const section = document.getElementById(id.toLowerCase());
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+          ) {
+            currentSection = id;
+            break;
+          }
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:jsutify-between lg:py-24">
-      <div className="flex flex-col gap-20">
+    <div className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+      <div className="flex flex-col">
         <div className="flex flex-col gap-3">
           <p className="text-5xl font-bold">Lukasz Szpilowski</p>
           <p className="text-xl font-bold">Freelance Frontend Developer</p>
@@ -57,15 +87,31 @@ function FixedInfo() {
           <ul className="mt-16 w-max">
             {navigations.map((navigation, index) => (
               <li key={index}>
-                <a
-                  className="group flex items-center py-3 active"
-                  href={`#${navigation}`}
+                <Link
+                  className={`group flex items-center py-3 ${
+                    activeSection === navigation
+                      ? "text-black"
+                      : "text-gray-500"
+                  }`}
+                  href={`#${navigation.toLowerCase()}`}
                 >
-                  <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
-                  <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">
+                  <span
+                    className={`nav-indicator mr-4 h-px w-8  transition-all ${
+                      activeSection === navigation
+                        ? "w-16 bg-black"
+                        : "bg-slate-600 group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200"
+                    }     motion-reduce:transition-none`}
+                  ></span>
+                  <span
+                    className={`nav-text text-xs font-bold uppercase tracking-widest ${
+                      activeSection === navigation
+                        ? null
+                        : "group-hover:text-slate-200 group-focus-visible:text-slate-200"
+                    } `}
+                  >
                     {navigation}
                   </span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -74,7 +120,7 @@ function FixedInfo() {
       <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
         {socials.map((social, index) => (
           <li className="mr-5 text-xs shrink-0" key={index}>
-            <a
+            <Link
               className="block hover:text-slate-200"
               href={social.href}
               target="_blank"
@@ -92,7 +138,7 @@ function FixedInfo() {
               >
                 <path d={social.path}></path>
               </svg>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
