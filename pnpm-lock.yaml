@@ -35,6 +35,9 @@ importers:
       pnpm:
         specifier: ^9.12.0
         version: 9.12.0
+      portfolio:
+        specifier: 'link:'
+        version: 'link:'
       react:
         specifier: ^18
         version: 18.3.1
