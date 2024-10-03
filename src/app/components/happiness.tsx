@@ -55,7 +55,7 @@ const HappinessForm = () => {
   const sliders: (keyof IPositivity)[] = ["positivity", "optimism", "smiles"];
 
   return (
-    <div className="max-w-md mx-auto p-4 space-y-6 w-full">
+    <div className="max-w-md mx-auto p-4 space-y-6 w-full pt-24" id="happiness">
       <h2 className="text-2xl font-bold text-center">How happy you are?</h2>
       <div className="flex flex-col gap-5">
         {sliders.map((slider, index) => (

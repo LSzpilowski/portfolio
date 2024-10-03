@@ -62,7 +62,7 @@ const projects: IProjects[] = [
 
 function ProjectList() {
   return (
-    <div className="flex flex-col gap-10 group ">
+    <div className="flex flex-col gap-10 group pt-24 " id="projects">
       {projects.map((project, index) => (
         <Link
           href={project.url}
