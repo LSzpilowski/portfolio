@@ -27,14 +27,14 @@ const projects: IProjects[] = [
       "The page is a restaurant-themed site with a clean, modern design showcasing a menu featuring starters, main courses, desserts, and drinks. It uses visual elements like images, product descriptions, and pricing. The site includes interactive features like a slider for top picks, filtering to browse categories, and a cart for adding items. It's built for user-friendly navigation, allowing quick access to menu items and encouraging ordering through a straightforward interface. The page's layout and features are aimed at enhancing the user experience and promoting easy exploration of the restaurant’s offerings. ",
     techs: ["VS Code", "Next.js", "TypeScript", "Tailwind"],
   },
-  {
-    title: "Hygraph Blog Starter",
-    url: "https://leaf-3.vercel.app/home",
-    image: "/images/leaf3.jpg",
-    excerpt:
-      "Participatory budgeting allows citizens to engage in decision-making on how to spend a part of a public budget. This application mirrors that concept, providing a platform for users to propose ideas, vote, and allocate funds to projects that improve their community. This project is a replica inspired by Legnica Civic Budget (LBO) and has been created for educational and demonstrative purposes only. The main goal is to showcase my skills and abilities as a programmer while adhering to copyright and legal considerations. ",
-    techs: ["VS Code", "Next.js", "TypeScript", "Tailwind"],
-  },
+  // {
+  //   title: "Hygraph Blog Starter",
+  //   url: "https://leaf-3.vercel.app/home",
+  //   image: "/images/leaf3.jpg",
+  //   excerpt:
+  //     "Participatory budgeting allows citizens to engage in decision-making on how to spend a part of a public budget. This application mirrors that concept, providing a platform for users to propose ideas, vote, and allocate funds to projects that improve their community. This project is a replica inspired by Legnica Civic Budget (LBO) and has been created for educational and demonstrative purposes only. The main goal is to showcase my skills and abilities as a programmer while adhering to copyright and legal considerations. ",
+  //   techs: ["VS Code", "Next.js", "TypeScript", "Tailwind"],
+  // },
   {
     title: "Todo List",
     url: "https://todolist-app-next-vercel-delta.vercel.app/",
