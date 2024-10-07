@@ -55,40 +55,42 @@ const HappinessForm = () => {
   const sliders: (keyof IPositivity)[] = ["positivity", "optimism", "smiles"];
 
   return (
-    <div className="max-w-md mx-auto p-4 space-y-6 w-full pt-24" id="happiness">
-      <h2 className="text-2xl font-bold text-center">How happy you are?</h2>
-      <div className="flex flex-col gap-5">
-        {sliders.map((slider, index) => (
-          <div key={index}>
-            <label className="block font-medium mb-1">
-              {slider.charAt(0).toUpperCase() + slider.slice(1)}{" "}
-              {getEmoticon(sliderValues[slider])}
-            </label>
-            <Slider
-              defaultValue={[sliderValues[slider]]}
-              max={10}
-              step={1}
-              onValueChange={(value) =>
-                setSliderValues((prev) => ({
-                  ...prev,
-                  [slider]: value[0],
-                }))
-              }
-              className="hover:cursor-pointer"
-            />
-          </div>
-        ))}
-      </div>
-
-      <Button onClick={handleCheckHappiness} className="w-full mt-4">
-        Let{`'`}s Check
-      </Button>
-
-      {happinessMessage && (
-        <div className="mt-6 p-4 bg-gray-100 rounded-md">
-          <p className="text-lg text-center">{happinessMessage}</p>
+    <div className="max-w-md mx-auto  w-full pt-12 lg:pt-24 " id="happiness">
+      <div className="p-4 space-y-6 hover:bg-secondary rounded-xl transition ease-in-out duration-300">
+        <h2 className="text-2xl font-bold text-center">How happy you are?</h2>
+        <div className="flex flex-col gap-5">
+          {sliders.map((slider, index) => (
+            <div key={index}>
+              <label className="block font-medium mb-1">
+                {slider.charAt(0).toUpperCase() + slider.slice(1)}{" "}
+                {getEmoticon(sliderValues[slider])}
+              </label>
+              <Slider
+                defaultValue={[sliderValues[slider]]}
+                max={10}
+                step={1}
+                onValueChange={(value) =>
+                  setSliderValues((prev) => ({
+                    ...prev,
+                    [slider]: value[0],
+                  }))
+                }
+                className="hover:cursor-pointer"
+              />
+            </div>
+          ))}
         </div>
-      )}
+
+        <Button onClick={handleCheckHappiness} className="w-full mt-4">
+          Let{`'`}s Check
+        </Button>
+
+        {happinessMessage && (
+          <div className="mt-6 p-4  rounded-md">
+            <p className="text-lg text-center">{happinessMessage}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
