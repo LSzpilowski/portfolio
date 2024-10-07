@@ -73,7 +73,7 @@ function FixedInfo() {
   }, []);
 
   return (
-    <div className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+    <div className="w-full lg:sticky lg:top-0 flex flex-col items-center  lg:max-h-screen lg:w-1/2  lg:justify-between lg:py-24">
       <div className="flex flex-col">
         <div className="flex flex-col gap-3">
           <p className="text-5xl font-bold">Lukasz Szpilowski</p>
@@ -89,24 +89,22 @@ function FixedInfo() {
               <li key={index}>
                 <Link
                   className={`group flex items-center py-3 ${
-                    activeSection === navigation
-                      ? "text-black"
-                      : "text-gray-500"
+                    activeSection === navigation ? "null" : "null"
                   }`}
                   href={`#${navigation.toLowerCase()}`}
                 >
                   <span
-                    className={`nav-indicator mr-4 h-px w-8  transition-all ${
+                    className={`nav-indicator mr-4 h-px bg-primary  transition-all ${
                       activeSection === navigation
-                        ? "w-16 bg-black"
-                        : "bg-slate-600 group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200"
+                        ? "w-16 opacity-100"
+                        : "w-8 group-hover:w-16 opacity-70 group-focus-visible:w-16 "
                     }     motion-reduce:transition-none`}
                   ></span>
                   <span
                     className={`nav-text text-xs font-bold uppercase tracking-widest ${
                       activeSection === navigation
-                        ? null
-                        : "group-hover:text-slate-200 group-focus-visible:text-slate-200"
+                        ? "opacity-100"
+                        : "opacity-70"
                     } `}
                   >
                     {navigation}
