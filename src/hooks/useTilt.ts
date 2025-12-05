@@ -23,7 +23,6 @@ export const useTilt = (isFlipped: boolean, isMobile: boolean) => {
     setTiltStyle({
       transform: `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`,
       transition: 'transform 0.2s ease-out',
-      filter: 'brightness(1.1) saturate(1.3)',
     });
   };
 
@@ -31,8 +30,7 @@ export const useTilt = (isFlipped: boolean, isMobile: boolean) => {
     setIsHovering(false);
     setTiltStyle({
       transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg)',
-      transition: 'transform 0.3s ease-out, filter 0.3s ease-out',
-      filter: 'brightness(1) saturate(1)',
+      transition: 'transform 0.3s ease-out',
     });
   };
 

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Slider } from "@/components/ui/slider";
+import { Button } from "@/components/ui/button";
 
 interface IPositivity {
   positivity: number;
@@ -55,9 +56,40 @@ const HappinessForm = () => {
     smiles: 10,
   });
 
-  const [happinessMessage, setHappinessMessage] = useState("Let's check!");
+  const [happinessMessage, setHappinessMessage] = useState("");
   const [isVisible, setIsVisible] = useState(true);
   const [isActivated, setIsActivated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        
+        if (!entry.isIntersecting && entry.boundingClientRect.top < 0 && isActivated) {
+          setIsActivated(false);
+          setHappinessMessage("");
+          setIsVisible(true);
+          setSliderValues({
+            positivity: 10,
+            optimism: 10,
+            smiles: 10,
+          });
+        }
+      },
+      { threshold: 0 }
+    );
+
+    const element = document.getElementById("happiness");
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, [isActivated]);
 
   useEffect(() => {
     if (!isActivated) return;
@@ -75,16 +107,14 @@ const HappinessForm = () => {
     }, 300);
   }, [sliderValues, happinessMessage, isActivated]);
 
-  const handleBoxClick = () => {
-    if (!isActivated) {
-      setIsActivated(true);
-      const message = Happiness(sliderValues);
-      setIsVisible(false);
-      setTimeout(() => {
-        setHappinessMessage(message);
-        setIsVisible(true);
-      }, 300);
-    }
+  const handleCheckClick = () => {
+    setIsActivated(true);
+    const message = Happiness(sliderValues);
+    setIsVisible(false);
+    setTimeout(() => {
+      setHappinessMessage(message);
+      setIsVisible(true);
+    }, 300);
   };
 
   const handleSliderChange = (slider: keyof IPositivity, value: number) => {
@@ -92,17 +122,13 @@ const HappinessForm = () => {
       ...prev,
       [slider]: value,
     }));
-    
-    if (!isActivated) {
-      setIsActivated(true);
-    }
   };
 
   const sliders: (keyof IPositivity)[] = ["positivity", "optimism", "smiles"];
 
   return (
-    <div className="max-w-md mx-auto  w-full pt-6 lg:pt-24 " id="happiness">
-      <div className="p-4 space-y-6 hover:bg-secondary rounded-xl transition ease-in-out duration-300">
+    <div className="max-w-md mx-auto  w-full pt-6 lg:pt-24 happiness-card" id="happiness">
+      <div className="p-4 space-y-6 rounded-lg hover:shadow-lg transition-all ease-in-out duration-300 border-2 border-primary/20 overflow-hidden bg-secondary">
         <h2 className="text-2xl font-bold text-center">How happy you are?</h2>
         <div className="flex flex-col gap-5">
           {sliders.map((slider, index) => (
@@ -123,12 +149,20 @@ const HappinessForm = () => {
         </div>
 
         <div 
-          onClick={handleBoxClick}
-          className={`mt-6 p-4 rounded-md transition-opacity duration-400 h-[120px] flex items-center justify-center cursor-pointer ${
+          className={`mt-6 p-4 rounded-md transition-opacity duration-400 h-[120px] flex items-center justify-center ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <p className="text-lg text-center">{happinessMessage}</p>
+          {!isActivated ? (
+            <Button 
+              onClick={handleCheckClick}
+              className="text-lg font-semibold px-8 py-6"
+            >
+              Let&apos;s check!
+            </Button>
+          ) : (
+            <p className="text-lg text-center">{happinessMessage}</p>
+          )}
         </div>
       </div>
     </div>

@@ -40,14 +40,14 @@ export const FlipCard = ({
     >
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
         <div 
-          className="flip-card-front relative w-full h-full flex items-center justify-center rounded-lg hover:shadow-lg transition-all ease-in-out duration-300 border-2 border-primary/20 overflow-hidden"
+          className="flip-card-front relative w-full h-full flex items-center justify-center rounded-lg hover:shadow-lg transition-all ease-in-out duration-300 border-2 border-primary/20 overflow-hidden [&:hover]:brightness-90 [&:hover]:saturate-[1.3] dark:[&:hover]:brightness-110"
           style={{
             backgroundColor: 'hsl(var(--secondary))',
           }}
         >
           <div className="absolute top-3 left-3 text-center z-10">
             <div 
-              className={`text-4xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-white' : ''}`}
+              className={`text-4xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-primary dark:text-white' : ''}`}
               style={{ opacity: isHovering ? 1 : 0.4 }}
             >
               ?
@@ -55,7 +55,7 @@ export const FlipCard = ({
           </div>
           <div className="absolute bottom-3 right-3 text-center transform rotate-180 z-10">
             <div 
-              className={`text-4xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-white' : ''}`}
+              className={`text-4xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-primary dark:text-white' : ''}`}
               style={{ opacity: isHovering ? 1 : 0.4 }}
             >
               ?
@@ -63,7 +63,7 @@ export const FlipCard = ({
           </div>
           <div className="text-center z-10">
             <div 
-              className={`text-9xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-white' : ''}`}
+              className={`text-9xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-primary dark:text-white' : ''}`}
               style={{ opacity: isHovering ? 1 : 0.6 }}
             >
               ?
@@ -115,8 +115,8 @@ export const FlipCard = ({
                   transitionDelay: isFlipped ? `${reverseDelay}s` : `${Math.max(0, currentPos - 1) * 0.15}s`,
                 }}
               >
-                <div className={`absolute top-3 left-3 text-4xl font-bold ${isOnTop ? 'text-white opacity-100' : 'opacity-40'}`}>?</div>
-                <div className={`absolute bottom-3 right-3 text-4xl font-bold rotate-180 ${isOnTop ? 'text-white opacity-100' : 'opacity-40'}`}>?</div>
+                <div className={`absolute top-3 left-3 text-4xl font-bold ${isOnTop ? 'text-primary dark:text-white opacity-100' : 'opacity-40'}`}>?</div>
+                <div className={`absolute bottom-3 right-3 text-4xl font-bold rotate-180 ${isOnTop ? 'text-primary dark:text-white opacity-100' : 'opacity-40'}`}>?</div>
 
                 <button
                   onClick={(e) => {
