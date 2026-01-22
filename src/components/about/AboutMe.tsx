@@ -69,13 +69,15 @@ function AboutMe() {
   }, [isFlipped]);
 
   return (
-    <div 
+    <section 
       id="about"
       className="flex flex-col pt-12 lg:pt-0 max-w-md mx-auto w-full transition-all duration-1000 ease-in-out"
       style={{
         marginBottom: isMobile && isFlipped ? '140px' : '0px'
       }}
+      aria-labelledby="about-heading"
     >
+      <h2 id="about-heading" className="sr-only">About Me</h2>
       <FlipCard
         isFlipped={isFlipped}
         isMobile={isMobile}
@@ -88,7 +90,7 @@ function AboutMe() {
         onMouseLeave={handleMouseLeave}
         onSwapCards={swapCards}
       />
-    </div>
+    </section>
   );
 }
 
