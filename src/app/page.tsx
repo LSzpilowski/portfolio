@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import AboutMe from "@/components/about/AboutMe";
 import FixedInfo from "@/components/fixed-info/FixedInfo";
 import HappinessForm from "@/components/happiness/HappinessForm";
@@ -26,36 +25,6 @@ export default function Home() {
           <AboutMe />
           <HappinessForm />
           <ProjectList />
-          <div className="opacity-80 py-10 md:pt-24 md:pb-0 lg:pt-24">
-            <p>
-              Partly designed in
-              <Link href="https://www.figma.com/" className="font-bold">
-                {" "}
-                Figma
-              </Link>{" "}
-              and partly on paper. Coded in
-              <Link href="https://code.visualstudio.com/" className="font-bold">
-                {" "}
-                Visual Studio Code
-              </Link>
-              . Built with
-              <Link href="https://nextjs.org/" className="font-bold">
-                {" "}
-                Next.js
-              </Link>{" "}
-              and
-              <Link href="https://tailwindcss.com/" className="font-bold">
-                {" "}
-                Tailwind CSS
-              </Link>
-              , deployed with
-              <Link href="https://vercel.com/" className="font-bold">
-                {" "}
-                Vercel
-              </Link>
-              .
-            </p>
-          </div>
         </div>
       </div>
     </div>
