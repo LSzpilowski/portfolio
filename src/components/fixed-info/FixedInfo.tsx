@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { socials, navigations } from "./data";
 
 function FixedInfo() {
@@ -33,10 +32,10 @@ function FixedInfo() {
   }, []);
 
   return (
-    <div className="w-full pt-8 lg:pt-0 lg:fixed lg:top-16 lg:bottom-4 lg:left-0 flex flex-col items-center lg:w-1/2 lg:justify-between lg:pb-12">
+    <div className="w-full pt-8 lg:pt-0 flex flex-col items-center lg:justify-between lg:h-full">
       <div className="flex flex-col">
         <div className="flex flex-col gap-3">
-          <p className="text-5xl font-bold">Lukasz Szpilowski</p>
+          <p className="text-5xl font-bold">Szpilowski Lukasz</p>
           <p className="text-xl font-bold">Freelance Frontend Developer</p>
           <div>
             <p>I build intuitive, engaging, </p>
@@ -47,7 +46,7 @@ function FixedInfo() {
           <ul className="mt-16 w-max">
             {navigations.map((navigation, index) => (
               <li key={index}>
-                <Link
+                <a
                   className={`group flex items-center py-3 ${
                     activeSection === navigation ? "null" : "null"
                   }`}
@@ -69,16 +68,17 @@ function FixedInfo() {
                   >
                     {navigation}
                   </span>
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
         </nav>
       </div>
-      <ul className="ml-1 mt-12 flex items-center" aria-label="Social media">
+      <div className="flex flex-col items-center">
+        <ul className="ml-1 mt-12 flex items-center" aria-label="Social media">
         {socials.map((social, index) => (
           <li className="mr-5 text-xs shrink-0" key={index}>
-            <Link
+            <a
               className="block hover:text-slate-200"
               href={social.href}
               target="_blank"
@@ -96,10 +96,15 @@ function FixedInfo() {
               >
                 <path d={social.path}></path>
               </svg>
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
+      <div className="mt-6 text-xs text-muted-foreground text-center w-full">
+        © 2026 Szpilowski Lukasz. All rights reserved.
+      </div>
+      </div>
+      
     </div>
   );
 }

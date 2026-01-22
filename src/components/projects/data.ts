@@ -1,50 +1,97 @@
 export interface IProject {
   title: string;
+  subtitle: string;
   url: string;
   image: string;
+  alt?: string;
   excerpt: string;
   techs: string[];
+  isVisible?: boolean;
 }
 
-export const projects: IProject[] = [
+export interface IProjectSection {
+  id: string;
+  title: string;
+  projects: IProject[];
+}
+
+export const projectSections: IProjectSection[] = [
   {
-    title: "Leaf-3",
-    url: "https://leaf-3.vercel.app/home",
-    image: "/images/leaf3.jpg",
-    excerpt:
-      "This page is a participatory budgeting web application designed for educational purposes, inspired by the Legnica Civic Budget. It showcases skills in using technologies like TypeScript, Next.js, and Redux for state management. The site offers functionalities to display existing participatory budget projects and filter them by ID, name or district. Additionally, you can either display all projects on the map, or just a single one. Result page show (for now) mock voting results.",
-    techs: ["Next.js", "TypeScript", "Tailwind"],
+    id: "client",
+    title: "Client Work",
+    projects: [
+      {
+        title: "Next Puma Website",
+        subtitle: "E-commerce Platform",
+        url: "https://vercel.com/lszpilowski-projects/next-puma-website",
+        image: "/images/puma.jpg",
+        alt: "Screenshot of Next Puma Website - E-commerce Platform",
+        excerpt:
+          "A production-ready e-commerce website for Puma, featuring modern design, responsive layout, and optimized performance. Built with Next.js 14, TypeScript, and Tailwind CSS. Includes product catalog, filtering, shopping cart functionality, and seamless user experience across all devices. Currently in final deployment phase.",
+        techs: ["Next.js 14", "TypeScript", "Tailwind CSS", "E-commerce"],
+        isVisible: false,
+      },
+    ],
   },
   {
-    title: "Eataly Restaurant",
-    url: "https://eataly-restaurant.vercel.app/home",
-    image: "/images/eataly.jpg",
-    excerpt:
-      "Modern design showcasing a menu featuring starters, main courses, desserts, and drinks. The site includes interactive features like a slider for top picks, filtering to browse categories. It's built for user-friendly navigation, allowing quick access to menu items and encouraging ordering through a straightforward interface. Future development: `log in` functionality with option of adding items to cart and mark them as a favourite.",
-    techs: ["Next.js", "TypeScript", "Tailwind"],
+    id: "apps",
+    title: "User Applications",
+    projects: [
+      {
+        title: "DoItly",
+        subtitle: "Minimal Task Management App",
+        url: "https://doitly.vercel.app",
+        image: "/images/doitly-cover.png",
+        alt: "Screenshot of DoItly - Minimal Task Management App",
+        excerpt:
+          "No priorities. No deadlines. Just do it. A minimalistic task management app with dual data persistence: localStorage for guest users and Supabase for authenticated users, supporting seamless offline-to-online transitions. Features include authentication with user-scoped data access, a single-input task model with multiple states (active, completed, archived, deleted), reusable task templates, and monthly/yearly statistics. Includes user data export (JSON), account deletion, and GDPR-compliant privacy controls.",
+        techs: ["Next.js", "TypeScript", "Tailwind", "Zustand", "Supabase"],
+        isVisible: true,
+      },
+      {
+        title: "Wordly",
+        subtitle: "Minimal Dictionary App",
+        url: "https://wordly-ls.vercel.app",
+        image: "/images/wordly-cover.png",
+        alt: "Screenshot of Wordly - Minimal Dictionary App",
+        excerpt:
+          "No noise. Just words. A fast, mobile-first dictionary web app with a clean, content-focused UI prioritizing definitions and examples. Integrated public dictionary and image APIs (DictionaryAPI, Pexels) with error handling and caching. Features performance optimizations including debounce, lazy loading, and client-side caching. Enhanced with SEO, dynamic metadata, Open Graph support, and PWA manifest for installability.",
+        techs: ["Next.js", "TypeScript", "Tailwind CSS", "API Integration"],
+        isVisible: true,
+      },
+    ],
   },
   {
-    title: "Todo List",
-    url: "https://todolist-app-next-vercel-delta.vercel.app/",
-    image: "/images/todo.jpg",
-    excerpt:
-      "The Todo List App features a simple interface to add and track tasks. Users can create todos, mark them as completed, and review items on their lists. Additionally, ten last deleted task are stored and ready to reuse. The design is minimalistic, focusing on functionality and ease of use. Built with Next.js, it emphasizes organizing tasks effectively. Future development: log in functionality, ability to add more list and store data. ",
-    techs: ["Next.js", "TypeScript", "Tailwind"],
-  },
-  {
-    title: "Dictionary App",
-    url: "https://dictionary-app-next-eight.vercel.app/",
-    image: "/images/dictionary.jpg",
-    excerpt:
-      "The Dictionary App was built with JavaScript at early stage of my programming journey, following the course. Later on, it was updated to Next.js and TypeScript. It allows users to search for English words, providing definitions, word types, and example uses. The app also features an audio pronunciation option, enhancing the learning experience. It offers a clean and educational interface, focusing on simple navigation and comprehensive word explanations. ",
-    techs: ["Next.js", "TypeScript", "Tailwind", "API"],
-  },
-  {
-    title: "Weather App",
-    url: " https://weather-app-next-js-lime.vercel.app/",
-    image: "/images/weather.jpg",
-    excerpt:
-      "The Weather App was built JavaScript at early stage of my programming journey, following the course. Later on, it was updated to Next.js and TypeScript. It provides a simple interface for users to check weather conditions by city. It includes details like temperature, humidity, and weather descriptions. The app aims to provide quick, real-time weather updates in a user-friendly format. Built with Next.js, it focuses on delivering essential weather information effectively. ",
-    techs: ["Next.js", "TypeScript", "Tailwind", "API"],
+    id: "learning",
+    title: "Learning Projects",
+    projects: [
+      {
+        title: "Eataly Restaurant",
+        subtitle: "Modern Restaurant Website",
+        url: "https://eataly-restaurant.vercel.app/home",
+        image: "/images/eataly-cover.png",
+        alt: "Screenshot of Eataly Restaurant - Modern Restaurant Website",
+        excerpt:
+          "A modern restaurant website showcasing a full menu with starters, main courses, desserts, and drinks. Features interactive elements including a slider for featured dishes and category filtering. Designed for intuitive navigation and user-friendly browsing experience with responsive layout optimized for all devices.",
+        techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+        isVisible: true,
+      },
+      {
+        title: "Leaf-3",
+        subtitle: "Participatory Budgeting Platform",
+        url: "https://leaf-3.vercel.app/home",
+        image: "/images/leaf3-cover.png",
+        alt: "Screenshot of Leaf-3 - Participatory Budgeting Platform",
+        excerpt:
+          "A participatory budgeting web application designed for educational purposes, inspired by the Legnica Civic Budget. Showcases skills in TypeScript, Next.js, and Redux for state management. Features include displaying budget projects, filtering by ID, name, or district, and interactive map visualization. Results page displays mock voting data for demonstration purposes.",
+        techs: ["Next.js", "TypeScript", "Tailwind", "Redux"],
+        isVisible: true,
+      },
+    ],
   },
 ];
+
+// Flatten all visible projects for backwards compatibility
+export const projects: IProject[] = projectSections
+  .flatMap((section) => section.projects)
+  .filter((project) => project.isVisible !== false);
