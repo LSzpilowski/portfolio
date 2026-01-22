@@ -8,6 +8,22 @@ export interface IProject {
 
 export const projects: IProject[] = [
   {
+    title: "DoItly - Minimal Task Management App",
+    url: "https://doitly.vercel.app",
+    image: "/images/todo.jpg",
+    excerpt:
+      "No priorities. No deadlines. Just do it. A minimalistic task management app with dual data persistence: localStorage for guest users and Supabase for authenticated users, supporting seamless offline-to-online transitions. Features include authentication with user-scoped data access, a single-input task model with multiple states (active, completed, archived, deleted), reusable task templates, and monthly/yearly statistics. Includes user data export (JSON), account deletion, and GDPR-compliant privacy controls.",
+    techs: ["Next.js", "TypeScript", "Tailwind", "Zustand", "Supabase"],
+  },
+  {
+    title: "Wordly - Minimal Dictionary App",
+    url: "https://wordly-ls.vercel.app",
+    image: "/images/dictionary.jpg",
+    excerpt:
+      "No noise. Just words. A fast, mobile-first dictionary web app with a clean, content-focused UI prioritizing definitions and examples. Integrated public dictionary and image APIs (DictionaryAPI, Pexels) with error handling and caching. Features performance optimizations including debounce, lazy loading, and client-side caching. Enhanced with SEO, dynamic metadata, Open Graph support, and PWA manifest for installability.",
+    techs: ["Next.js", "TypeScript", "Tailwind CSS", "API"],
+  },
+  {
     title: "Leaf-3",
     url: "https://leaf-3.vercel.app/home",
     image: "/images/leaf3.jpg",
@@ -22,22 +38,6 @@ export const projects: IProject[] = [
     excerpt:
       "Modern design showcasing a menu featuring starters, main courses, desserts, and drinks. The site includes interactive features like a slider for top picks, filtering to browse categories. It's built for user-friendly navigation, allowing quick access to menu items and encouraging ordering through a straightforward interface. Future development: `log in` functionality with option of adding items to cart and mark them as a favourite.",
     techs: ["Next.js", "TypeScript", "Tailwind"],
-  },
-  {
-    title: "Todo List",
-    url: "https://todolist-app-next-vercel-delta.vercel.app/",
-    image: "/images/todo.jpg",
-    excerpt:
-      "The Todo List App features a simple interface to add and track tasks. Users can create todos, mark them as completed, and review items on their lists. Additionally, ten last deleted task are stored and ready to reuse. The design is minimalistic, focusing on functionality and ease of use. Built with Next.js, it emphasizes organizing tasks effectively. Future development: log in functionality, ability to add more list and store data. ",
-    techs: ["Next.js", "TypeScript", "Tailwind"],
-  },
-  {
-    title: "Dictionary App",
-    url: "https://dictionary-app-next-eight.vercel.app/",
-    image: "/images/dictionary.jpg",
-    excerpt:
-      "The Dictionary App was built with JavaScript at early stage of my programming journey, following the course. Later on, it was updated to Next.js and TypeScript. It allows users to search for English words, providing definitions, word types, and example uses. The app also features an audio pronunciation option, enhancing the learning experience. It offers a clean and educational interface, focusing on simple navigation and comprehensive word explanations. ",
-    techs: ["Next.js", "TypeScript", "Tailwind", "API"],
   },
   {
     title: "Weather App",
