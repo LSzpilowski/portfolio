@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { CardContent } from "./CardContent";
 import { tabs } from "./data";
 
@@ -35,38 +36,42 @@ export const FlipCard = ({
       onMouseLeave={onMouseLeave}
       style={{ 
         aspectRatio: "2.5 / 3.5",
+        touchAction: "pan-y",
         ...(!isFlipped ? tiltStyle : {}),
       }}
     >
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
         <div 
-          className="flip-card-front relative w-full h-full flex items-center justify-center rounded-lg hover:shadow-lg transition-all ease-in-out duration-300 border-2 border-primary/20 overflow-hidden [&:hover]:brightness-90 [&:hover]:saturate-[1.3] dark:[&:hover]:brightness-110"
+          className="flip-card-front relative w-full h-full flex items-center justify-center rounded-lg hover:shadow-lg transition-all ease-in-out duration-300 border-2 border-primary/20 overflow-hidden"
           style={{
             backgroundColor: 'hsl(var(--secondary))',
           }}
         >
-          <div className="absolute top-3 left-3 text-center z-10">
-            <div 
-              className={`text-4xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-primary dark:text-white' : ''}`}
-              style={{ opacity: isHovering ? 1 : 0.4 }}
-            >
-              ?
+          <div className="relative w-full h-full">
+            <Image
+              src="/images/ls.png"
+              alt="Szpilowski Lukasz"
+              fill
+              quality={100}
+              className="object-cover rounded-lg"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+            />
+            <div className="absolute top-3 left-3 text-center z-10">
+              <div 
+                className={`text-4xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-primary dark:text-white' : ''}`}
+                style={{ opacity: isHovering ? 1 : 0.4 }}
+              >
+                ?
+              </div>
             </div>
-          </div>
-          <div className="absolute bottom-3 right-3 text-center transform rotate-180 z-10">
-            <div 
-              className={`text-4xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-primary dark:text-white' : ''}`}
-              style={{ opacity: isHovering ? 1 : 0.4 }}
-            >
-              ?
-            </div>
-          </div>
-          <div className="text-center z-10">
-            <div 
-              className={`text-9xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-primary dark:text-white' : ''}`}
-              style={{ opacity: isHovering ? 1 : 0.6 }}
-            >
-              ?
+            <div className="absolute bottom-3 right-3 text-center transform rotate-180 z-10">
+              <div 
+                className={`text-4xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-primary dark:text-white' : ''}`}
+                style={{ opacity: isHovering ? 1 : 0.4 }}
+              >
+                ?
+              </div>
             </div>
           </div>
         </div>
