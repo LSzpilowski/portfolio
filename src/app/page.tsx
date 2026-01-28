@@ -24,7 +24,7 @@ export default function Home() {
           <FixedInfo />
         </aside>
         <section id="content" className="flex flex-col w-full">
-          <h1 className="sr-only">Szpilowski Lukasz – Frontend Developer Portfolio</h1>
+          <h1 className="sr-only">Szpilowski Lukasz – Frontend Engineer Portfolio</h1>
           <AboutMe />
           <HappinessForm />
           <ProjectList />

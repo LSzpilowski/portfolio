@@ -18,43 +18,51 @@ export interface Tab {
 
 export const aboutParagraphs = [
   "Hi there – thanks for stopping by!",
-  "I'm a front-end developer with over three years of hands-on experience, including a year at Opera Software. I work mostly with TypeScript, SCSS, HTML, and modern frameworks. Basically, I love turning designs into clean, responsive, and easy-to-use pages. I enjoy working with designers, developers, and content teams to make interfaces that just… feel right.",
-  "I care about clarity and maintainability, and I often spend time thinking about how a component or CMS model could work better. It's not just about making it look nice – it's about making it work well, consistently, and for real people. Sometimes, I find myself experimenting with small tweaks just to see if the UX can feel a little smoother.",
+  "I'm a frontend engineer with 3+ years of experience, including work at Opera Software. I specialize in building maintainable, production-ready web interfaces using TypeScript, modern frameworks, and CMS-driven architectures.",
+  "I focus on clarity, scalability, and long-term maintainability – thinking not only about how things look, but how components, content models, and systems work together. I enjoy refining UX details, improving structure, and reducing unnecessary complexity.",
   "Outside of coding, I stay active with bouldering, calisthenics, and movement-based performance. It keeps me focused, balanced, and creatively energized – which, believe it or not, actually helps when debugging tricky layouts."
 ];
 
 export const skillSections: SkillSection[] = [
   {
-    title: "Core technologies",
+    title: "Frontend engineering",
     items: [
       "TypeScript & JavaScript (ES6+)",
       "React & Next.js",
-      "SCSS, Tailwind CSS, responsive UI",
-      "HTML semantics & accessibility standards",
+      "Responsive UI (SCSS, Tailwind CSS)",
+      "HTML semantics & accessibility (WCAG-aware)",
     ]
   },
   {
-    title: "Frameworks & CMS",
+    title: "State & data",
+    items: [
+      "Client-side state management (Zustand)",
+      "RESTful API integration",
+      "Supabase (Auth, database, storage)"
+    ]
+  },
+  {
+    title: "CMS & content-driven apps",
     items: [
       "Django / Wagtail CMS (production experience)",
-      "WordPress (PHP templates, blog customization)"
+      "WordPress (custom themes, PHP templates)"
     ]
   },
   {
     title: "Workflow & collaboration",
     items: [
-      "Git (feature branching, reviews), GitLab",
-      "Jira (task management), daily standups & weekly planning",
-      "Figma (design system & UI translation)"
+      "Git (feature branching, code reviews), GitLab",
+      "Jira (task planning, agile workflows)",
+      "Figma (design systems, UI handoff)"
     ]
   },
   {
     title: "Development practices",
     items: [
       "Component-driven architecture",
-      "Clean, maintainable code & reusable components",
+      "Clean, maintainable reusable code",
       "Performance-aware implementation",
-      "Mobile-first approach & cross-browser compatibility"
+      "Mobile-first & cross-browser compatibility"
     ]
   }
 ];

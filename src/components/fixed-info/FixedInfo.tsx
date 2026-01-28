@@ -36,7 +36,7 @@ function FixedInfo() {
       <div className="flex flex-col">
         <div className="flex flex-col gap-3">
           <p className="text-5xl font-bold">Szpilowski Lukasz</p>
-          <p className="text-xl font-bold">Freelance Frontend Developer</p>
+          <p className="text-xl font-bold">Frontend Engineer</p>
           <div>
             <p>I build intuitive, engaging, </p>
             <p>and accessible digital experiences.</p>

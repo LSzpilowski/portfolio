@@ -5,10 +5,10 @@ import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
-    default: "Szpilowski Lukasz – Frontend Developer Portfolio",
+    default: "Szpilowski Lukasz – Frontend Engineer Portfolio",
     template: "%s | Szpilowski Lukasz",
   },
-  description: "Portfolio of Szpilowski Lukasz – freelance frontend developer. Modern, accessible web applications, React, Next.js, TypeScript.",
+  description: "Portfolio of Szpilowski Lukasz – frontend engineer. Modern, accessible web applications, React, Next.js, TypeScript.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Szpilowski Lukasz – Frontend Developer Portfolio",
-    description: "Portfolio of Szpilowski Lukasz – freelance frontend developer. Modern, accessible web applications, React, Next.js, TypeScript.",
+    title: "Szpilowski Lukasz – Frontend Engineer Portfolio",
+    description: "Portfolio of Szpilowski Lukasz – frontend engineer. Modern, accessible web applications, React, Next.js, TypeScript.",
     url: "https://lszpilowski.dev/",
     siteName: "Szpilowski Lukasz Portfolio",
     images: [
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Szpilowski Lukasz – Frontend Developer Portfolio",
-    description: "Portfolio of Szpilowski Lukasz – freelance frontend developer. Modern, accessible web applications, React, Next.js, TypeScript.",
+    title: "Szpilowski Lukasz – Frontend Engineer Portfolio",
+    description: "Portfolio of Szpilowski Lukasz – frontend engineer. Modern, accessible web applications, React, Next.js, TypeScript.",
     images: ["/images/og-image.png"],
     creator: "@lszpilowski",
   },
