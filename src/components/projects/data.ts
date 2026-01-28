@@ -21,14 +21,14 @@ export const projectSections: IProjectSection[] = [
     title: "Client Work",
     projects: [
       {
-        title: "Next Puma Website",
+        title: "ZTT P.U.M.A. Website",
         subtitle: "E-commerce Platform",
         url: "https://vercel.com/lszpilowski-projects/next-puma-website",
         image: "/images/puma.jpg",
-        alt: "Screenshot of Next Puma Website - E-commerce Platform",
+        alt: "Screenshot of ZTT P.U.M.A. Website - E-commerce Platform",
         excerpt:
           "A production-ready e-commerce website for Puma, featuring modern design, responsive layout, and optimized performance. Built with Next.js 14, TypeScript, and Tailwind CSS. Includes product catalog, filtering, shopping cart functionality, and seamless user experience across all devices. Currently in final deployment phase.",
-        techs: ["Next.js 14", "TypeScript", "Tailwind CSS", "E-commerce"],
+        techs: ["Next.js 14", "TypeScript", "Tailwind CSS"],
         isVisible: false,
       },
     ],
@@ -91,7 +91,6 @@ export const projectSections: IProjectSection[] = [
   },
 ];
 
-// Flatten all visible projects for backwards compatibility
 export const projects: IProject[] = projectSections
   .flatMap((section) => section.projects)
   .filter((project) => project.isVisible !== false);

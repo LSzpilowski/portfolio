@@ -60,7 +60,7 @@ export const FlipCard = ({
             <div className="absolute top-3 left-3 text-center z-10">
               <div 
                 className={`text-4xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-primary dark:text-white' : ''}`}
-                style={{ opacity: isHovering ? 1 : 0.4 }}
+                style={{ opacity: isMobile ? 1 : (isHovering ? 1 : 0.4) }}
               >
                 ?
               </div>
@@ -68,7 +68,7 @@ export const FlipCard = ({
             <div className="absolute bottom-3 right-3 text-center transform rotate-180 z-10">
               <div 
                 className={`text-4xl font-bold transition-all duration-700 ease-in-out ${isHovering ? 'text-primary dark:text-white' : ''}`}
-                style={{ opacity: isHovering ? 1 : 0.4 }}
+                style={{ opacity: isMobile ? 1 : (isHovering ? 1 : 0.4) }}
               >
                 ?
               </div>
@@ -141,9 +141,6 @@ export const FlipCard = ({
                   }}
                   title={tab.title}
                 >
-                  <span className="text-xs font-bold opacity-80 flex items-center justify-center h-full">
-                    {stackPos === 0 ? "📍" : `#${stackPos}`}
-                  </span>
                 </button>
 
                 <CardContent 
