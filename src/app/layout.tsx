@@ -50,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased">
+      <body className="antialiased radial-gradientt">
         <Providers>
           {children}
         </Providers>

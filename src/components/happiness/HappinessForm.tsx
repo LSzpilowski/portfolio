@@ -59,11 +59,16 @@ const HappinessForm = () => {
   const [happinessMessage, setHappinessMessage] = useState("");
   const [isVisible, setIsVisible] = useState(true);
   const [isActivated, setIsActivated] = useState(false);
+  const [hasRevealed, setHasRevealed] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
+        
+        if (entry.isIntersecting && !hasRevealed) {
+          setHasRevealed(true);
+        }
         
         if (!entry.isIntersecting && entry.boundingClientRect.top < 0 && isActivated) {
           setIsActivated(false);
@@ -76,7 +81,7 @@ const HappinessForm = () => {
           });
         }
       },
-      { threshold: 0 }
+      { threshold: 0.1 }
     );
 
     const element = document.getElementById("happiness");
@@ -89,7 +94,7 @@ const HappinessForm = () => {
         observer.unobserve(element);
       }
     };
-  }, [isActivated]);
+  }, [isActivated, hasRevealed]);
 
   useEffect(() => {
     if (!isActivated) return;
@@ -127,7 +132,11 @@ const HappinessForm = () => {
   const sliders: (keyof IPositivity)[] = ["positivity", "optimism", "smiles"];
 
   return (
-    <div className="max-w-md mx-auto  w-full pt-6 lg:pt-24 happiness-card" id="happiness">
+    <div 
+      className={`max-w-md mx-auto w-full pt-6 lg:pt-12 happiness-card transition-all duration-700 ease-out ${
+        hasRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`} 
+    >
       <div className="p-4 space-y-6 rounded-lg hover:shadow-lg transition-all ease-in-out duration-300 border-2 border-primary/20 overflow-hidden bg-secondary">
         <h2 className="text-2xl font-bold text-center">How happy you are?</h2>
         <div className="flex flex-col gap-5">

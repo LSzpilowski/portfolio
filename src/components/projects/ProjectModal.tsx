@@ -22,7 +22,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl md:text-3xl font-bold mb-2">
             {project.title}
