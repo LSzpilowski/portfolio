@@ -7,6 +7,7 @@ export interface IProject {
   excerpt: string;
   techs: string[];
   isVisible?: boolean;
+  titleColor?: "black" | "white";
 }
 
 export interface IProjectSection {
@@ -21,15 +22,16 @@ export const projectSections: IProjectSection[] = [
     title: "Client Work",
     projects: [
       {
-        title: "ZTT P.U.M.A. Website",
-        subtitle: "E-commerce Platform",
-        url: "https://vercel.com/lszpilowski-projects/next-puma-website",
-        image: "/images/puma.jpg",
-        alt: "Screenshot of ZTT P.U.M.A. Website - E-commerce Platform",
+        title: "ZTT P.U.M.A.",
+        subtitle: "Medical Research Laboratory",
+        url: "https://pumadott.com",
+        image: "/images/puma-cover.png",
+        alt: "Screenshot of ZTT P.U.M.A.  - Medical Research Laboratory",
         excerpt:
-          "A production-ready e-commerce website for Puma, featuring modern design, responsive layout, and optimized performance. Built with Next.js 14, TypeScript, and Tailwind CSS. Includes product catalog, filtering, shopping cart functionality, and seamless user experience across all devices. Currently in final deployment phase.",
+          "Professional website for the Laboratory of Unique Application Models (P.U.M.A.) at Wrocław Medical University. Features research projects, publications, team profiles, and collaboration opportunities. Built with Next.js 14, TypeScript, and Tailwind CSS. The platform showcases cutting-edge research at the intersection of medicine, biology, computer science and biotechnology.",
         techs: ["Next.js 14", "TypeScript", "Tailwind CSS"],
-        isVisible: false,
+        isVisible: true,
+        titleColor: "black",
       },
     ],
   },
@@ -86,6 +88,7 @@ export const projectSections: IProjectSection[] = [
           "A participatory budgeting web application designed for educational purposes, inspired by the Legnica Civic Budget. Showcases skills in TypeScript, Next.js, and Redux for state management. Features include displaying budget projects, filtering by ID, name, or district, and interactive map visualization. Results page displays mock voting data for demonstration purposes.",
         techs: ["Next.js", "TypeScript", "Tailwind", "Redux"],
         isVisible: true,
+        titleColor: "black",
       },
     ],
   },

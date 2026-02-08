@@ -17,6 +17,7 @@ body {
 @layer base {
   :root {
     --background: 0 0% 100%;
+    --background-reverse: 0 0% 0%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
@@ -43,7 +44,8 @@ body {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
+    --background: 0 0% 0%;
+    --background-reverse: 0 0% 100%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -174,3 +176,14 @@ body {
   opacity: 1;
 }
 
+.radial-gradienttt {
+  background: linear-gradient(
+  to bottom,
+  hsl(var(--background)) 0%,
+  hsl(var(--background)) 25%,
+  hsl(var(--background-reverse)) 35%,
+  hsl(var(--background-reverse)) 65%,
+  hsl(var(--background)) 75%,
+  hsl(var(--background)) 100%
+);
+}

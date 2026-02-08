@@ -121,7 +121,7 @@ export const FlipCard = ({
                 }}
               >
                 <div className={`absolute top-3 left-3 text-4xl font-bold ${isOnTop ? 'text-primary dark:text-white opacity-100' : 'opacity-40'}`}>?</div>
-                <div className={`absolute bottom-3 right-3 text-4xl font-bold rotate-180 ${isOnTop ? 'text-primary dark:text-white opacity-100' : 'opacity-40'}`}>?</div>
+                <div className={`absolute bottom-3 right-3 text-4xl font-bold rotate-180 ${isOnTop ? 'text-primary dark:text-white opacity-100' : 'opacity-100'}`}></div>
 
                 <button
                   onClick={(e) => {
