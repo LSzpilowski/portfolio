@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { projectSections } from "./data";
 import { ProjectModal } from "./ProjectModal";
@@ -103,7 +103,7 @@ function ProjectList() {
                     onMouseLeave={() => setHoveredProject(null)}
                     tabIndex={0}
                     aria-label={`Open details for project ${project.title}`}
-                    className="group relative aspect-video overflow-hidden rounded-lg border-2 border-primary/20 cursor-pointer transition-all duration-300 hover:border-primary/40 hover:shadow-lg bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/80"
+                    className="group relative aspect-video overflow-hidden rounded-lg border-2 border-primary/20 transition-all duration-300 hover:border-primary/40 hover:shadow-lg bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/80"
                     onKeyDown={e => {
                       if (e.key === "Enter" || e.key === " ") {
                         handleProjectClick(project);
