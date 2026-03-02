@@ -1,0 +1,33 @@
+.hex-honeycomb {
+  --hex-w: 210px;
+  --hex-h: 177px;
+  display: grid;
+  grid-template: repeat(6, 1fr) / 1fr repeat(3, 2fr 0.9fr);
+  margin: 0 auto;
+  text-align: center;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .hex-honeycomb {
+    --hex-w: 260px;
+    --hex-h: 220px;
+  }
+}
+
+.hex-tile {
+  width: var(--hex-w);
+  height: var(--hex-h);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: hsl(var(--foreground) / 0.7);
+  color: hsl(var(--background));
+  transition: background-color 0.2s ease;
+}
+
+.hex-honeycomb:has(.hex-tile:hover) .hex-tile:not(:hover) {
+  background-color: hsl(var(--foreground) / 0.3);
+}
+
+.hex-honeycomb .hex-tile--left-top    { grid-area: 4 / 1 / span 2 / span 3; }
+.hex-honeycomb .hex-tile--left-bottom { grid-area: 2 / 1 / span 2 / span 3; }
+.hex-honeycomb .hex-tile--center      { grid-area: 3 / 3 / span 2 / span 3; }

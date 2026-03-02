@@ -1,6 +1,11 @@
 
 import type { Metadata } from "next";
 import "@/styles/globals.css";
+import "@/styles/animations.css";
+import "@/styles/flip-card.css";
+import "@/styles/hex.css";
+import "@/styles/navigation.css";
+import "@/styles/scrollbar.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
@@ -49,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className="antialiased radial-gradientt">
         <Providers>
           {children}
