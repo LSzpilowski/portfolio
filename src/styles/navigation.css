@@ -1,0 +1,20 @@
+/* Side navigation indicator + label styles */
+.nav-indicator {
+  display: block;
+}
+
+.nav-text {
+  display: block;
+}
+
+/* Group hover: expand indicator line */
+.group:hover .nav-indicator,
+.group:focus-visible .nav-indicator {
+  width: 4rem; /* w-16 */
+  opacity: 1;
+}
+
+.group:hover .nav-text,
+.group:focus-visible .nav-text {
+  opacity: 1;
+}
