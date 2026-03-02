@@ -49,7 +49,7 @@ export const FlipCard = ({
         >
           <div className="relative w-full h-full">
             <Image
-              src="/images/ls.png"
+              src="/images/LS.webp"
               alt="Szpilowski Lukasz"
               fill
               quality={100}
