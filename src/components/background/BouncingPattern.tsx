@@ -15,7 +15,7 @@ interface Particle {
 
 export const BouncingPattern = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(undefined);
   const mouseRef = useRef({ x: -9999, y: -9999 });
   const particlesRef = useRef<Particle[]>([]);
   const [isAnimationEnabled, setIsAnimationEnabled] = useState(true);
