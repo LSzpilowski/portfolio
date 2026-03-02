@@ -8,59 +8,65 @@ export interface WorkSection {
   items: string[];
 }
 
+export interface ImpactSection {
+  title: string;
+  items: string[];
+}
+
 export interface Tab {
   title: string;
   color: string;
   paragraphs?: string[];
   skillSections?: SkillSection[];
   workSections?: WorkSection[];
+  impactSections?: ImpactSection[];
 }
 
 export const aboutParagraphs = [
   "Hi there – thanks for stopping by!",
-  "I'm a frontend engineer with 3+ years of experience, including work at Opera Software. I specialize in building maintainable, production-ready web interfaces using TypeScript, modern frameworks, and CMS-driven architectures.",
-  "I focus on clarity, scalability, and long-term maintainability – thinking not only about how things look, but how components, content models, and systems work together. I enjoy refining UX details, improving structure, and reducing unnecessary complexity.",
-  "Outside of coding, I stay active with bouldering, calisthenics, and movement-based performance. It keeps me focused, balanced, and creatively energized – which, believe it or not, actually helps when debugging tricky layouts."
+  "I’m a Frontend Developer with commercial experience at Opera Software, focused on building maintainable, production-ready interfaces using TypeScript and modern frameworks.",
+  "I think beyond visuals — considering component architecture, content structure, and long-term scalability. I enjoy refining UX details and simplifying systems to make products easier to extend and maintain.",
+  "Outside of coding, I train bouldering and calisthenics — movement keeps me focused and surprisingly good at debugging layout issues."
 ];
 
 export const skillSections: SkillSection[] = [
   {
-    title: "Frontend engineering",
+    title: "Core",
     items: [
-      "TypeScript & JavaScript (ES6+)",
+      "TypeScript & modern JavaScript (ES6+)",
       "React & Next.js",
-      "Responsive UI (SCSS, Tailwind CSS)",
-      "HTML semantics & accessibility (WCAG-aware)",
+      "Responsive UI (Tailwind, SCSS)",
+      "Semantic HTML & accessibility (WCAG-aware)",
     ]
   },
   {
     title: "State & data",
     items: [
-      "Client-side state management (Zustand)",
-      "RESTful API integration",
+      "Zustand (client-side state)",
+      "REST API integration",
       "Supabase (Auth, database, storage)"
     ]
   },
   {
     title: "CMS & content-driven apps",
     items: [
-      "Django / Wagtail CMS (production experience)",
+      "Django / WagtailCMS (production experience)",
       "WordPress (custom themes, PHP templates)"
     ]
   },
   {
-    title: "Workflow & collaboration",
+    title: "Workflow",
     items: [
-      "Git (feature branching, code reviews), GitLab",
-      "Jira (task planning, agile workflows)",
-      "Figma (design systems, UI handoff)"
+      "Git (feature branching, code reviews)",
+      "Agile collaboration (Jira)",
+      "Figma (design systems & handoff)"
     ]
   },
   {
-    title: "Development practices",
+    title: "Engineering Focus",
     items: [
       "Component-driven architecture",
-      "Clean, maintainable reusable code",
+      "Maintainable & reusable code",
       "Performance-aware implementation",
       "Mobile-first & cross-browser compatibility"
     ]
@@ -71,19 +77,31 @@ export const workSections: WorkSection[] = [
   {
     title: "I value clear processes and communication.",
     items: [
-      "I enjoy working in a structured environment where everyone knows what we're building and why. I collaborate closely with designers, copywriters, developers, and project managers to keep tasks moving smoothly from concept to delivery. Tools like Figma, Jira, and GitLab help me keep everything aligned and transparent."
+      "I enjoy working in structured environments where goals are well-defined and everyone understands what we’re building and why. I collaborate closely with designers and backend engineers to move ideas efficiently from concept to production."
     ]
   },
   {
     title: "I write simple, readable, and maintainable code.",
     items: [
-      "I'm always looking for ways to reduce complexity, remove noise, and make components easier to understand. I love spaghetti – but not in code. Clean structure and shared conventions help teams work faster and avoid unnecessary friction."
+      "I reduce complexity, structure components thoughtfully, and follow shared conventions so teams can scale features without friction."
     ]
   },
   {
-    title: "I care about consistency and user experience.",
+    title: "I care about consistency and UX quality.",
     items: [
-      "Whether I'm building new pages, updating components, or migrating content, I focus on patterns that make the product feel cohesive. A predictable UX, clean implementation, and reliable collaboration are what keep projects stable even when deadlines aren't."
+      "Clean implementation, predictable patterns, and attention to detail keep products stable — even under tight deadlines."
+    ]
+  }
+];
+
+export const impactSections: ImpactSection[] = [
+  {
+    title: "Impact",
+    items: [
+      "Built and maintained production interfaces",
+      "Improved component reusability in CMS-driven projects",
+      "Implemented authentication & user-scoped data access",
+      "Optimized performance using lazy loading and code splitting",
     ]
   }
 ];
@@ -93,6 +111,7 @@ export const tabs: Tab[] = [
     title: "About me",
     color: "bg-blue-500",
     paragraphs: aboutParagraphs,
+    impactSections: impactSections,
   },
   {
     title: "My skills",

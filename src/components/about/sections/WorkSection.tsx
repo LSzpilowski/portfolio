@@ -1,4 +1,3 @@
-import React from "react";
 import { workSections } from "../data";
 
 export const WorkSection = () => {

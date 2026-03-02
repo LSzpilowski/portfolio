@@ -1,4 +1,3 @@
-import React from "react";
 import { skillSections } from "../data";
 
 export const SkillsSection = () => {

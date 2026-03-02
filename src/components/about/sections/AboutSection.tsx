@@ -1,10 +1,10 @@
-import React from "react";
-import { aboutParagraphs } from "../data";
+import { aboutParagraphs, impactSections } from "../data";
 
 const boldPatterns = [
   { start: "Hi there", text: "Hi there – thanks for stopping by!" },
-  { start: "I'm a front-end developer", text: "I'm a front-end developer" },
+  { start: "I’m a Frontend Developer", text: "I’m a Frontend Developer" },
   { start: "I care about clarity", text: "I care about clarity and maintainability" },
+  { start: "I think beyond visuals", text: "I think beyond visuals" },
   { start: "Outside of coding", text: "Outside of coding" },
 ];
 
@@ -30,6 +30,17 @@ export const AboutSection = () => {
         <p key={i} className="opacity-90">
           {formatParagraph(paragraph)}
         </p>
+      ))}
+
+      {impactSections.map((section, i) => (
+        <div key={i} className="pt-2">
+          <p className="font-bold text-center mb-2">{section.title}</p>
+          <ul className="list-disc ml-5 space-y-1">
+            {section.items.map((item, idx) => (
+              <li key={idx} className="opacity-90">{item}</li>
+            ))}
+          </ul>
+        </div>
       ))}
     </div>
   );
