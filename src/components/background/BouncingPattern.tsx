@@ -53,7 +53,10 @@ export const BouncingPattern = () => {
 
     const sizes = [2, 4, 6] as const;
     const particles: Particle[] = [];
-    const particleCount = rows * cols;
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile
+      ? Math.floor(rows * cols * 0.35)
+      : rows * cols;
     
     for (let i = 0; i < particleCount; i++) {
       const angle = Math.random() * Math.PI * 2;
@@ -195,10 +198,17 @@ export const BouncingPattern = () => {
       updateCanvasSize();
     };
 
-    window.addEventListener("resize", handleResize);
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    const debouncedResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(handleResize, 150);
+    };
+
+    window.addEventListener("resize", debouncedResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", debouncedResize);
+      clearTimeout(resizeTimer);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseleave', handleMouseLeave);
       if (animationRef.current) {
@@ -210,10 +220,12 @@ export const BouncingPattern = () => {
   return (
     <div
       className="fixed inset-0 pointer-events-none overflow-hidden"
-      style={{ zIndex: 0 }}
+      style={{ zIndex: -1 }}
     >
       <canvas
         ref={canvasRef}
+        aria-hidden="true"
+        role="presentation"
         className={`absolute inset-0 w-full h-full opacity-100 transition-opacity duration-300 ${
           isAnimationEnabled ? "opacity-100" : "opacity-0"
         }`}

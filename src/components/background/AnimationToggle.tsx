@@ -26,7 +26,7 @@ export function AnimationToggle() {
   };
 
   return (
-    <Button variant="outline" size="icon" onClick={toggleAnimation}>
+    <Button variant="outline" size="icon" onClick={toggleAnimation} className="btn-fill transition-colors duration-300 hover:text-background">
       <Sparkles 
         className={`h-[1.2rem] w-[1.2rem] transition-all ${
           isAnimationOn ? "scale-100 opacity-100" : "scale-90 opacity-50"

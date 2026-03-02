@@ -1,19 +1,33 @@
 
 import type { Metadata } from "next";
+import { Syne } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/animations.css";
+import "@/styles/scrollbar.css";
 import "@/styles/flip-card.css";
 import "@/styles/hex.css";
 import "@/styles/navigation.css";
-import "@/styles/scrollbar.css";
 import { Providers } from "./providers";
+import Script from "next/script";
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lszpilowski.com"),
   title: {
-    default: "Szpilowski Lukasz – Frontend Engineer Portfolio",
+    default: "Szpilowski Lukasz – Frontend Developer Portfolio",
     template: "%s | Szpilowski Lukasz",
   },
-  description: "Portfolio of Szpilowski Lukasz – frontend engineer. Modern, accessible web applications, React, Next.js, TypeScript.",
+  description: "Portfolio of Szpilowski Lukasz – frontend Developer. Modern, accessible web applications, React, Next.js, TypeScript.",
+  keywords: ["frontend developer", "React", "Next.js", "TypeScript", "Wrocław", "portfolio", "web developer"],
+  authors: [{ name: "Szpilowski Lukasz", url: "https://lszpilowski.com" }],
+  alternates: {
+    canonical: "https://lszpilowski.com",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -24,9 +38,9 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Szpilowski Lukasz – Frontend Engineer Portfolio",
-    description: "Portfolio of Szpilowski Lukasz – frontend engineer. Modern, accessible web applications, React, Next.js, TypeScript.",
-    url: "https://lszpilowski.dev/",
+    title: "Szpilowski Lukasz – Frontend Developer Portfolio",
+    description: "Portfolio of Szpilowski Lukasz – frontend Developer. Modern, accessible web applications, React, Next.js, TypeScript.",
+    url: "https://lszpilowski.com",
     siteName: "Szpilowski Lukasz Portfolio",
     images: [
       {
@@ -41,11 +55,23 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Szpilowski Lukasz – Frontend Engineer Portfolio",
-    description: "Portfolio of Szpilowski Lukasz – frontend engineer. Modern, accessible web applications, React, Next.js, TypeScript.",
+    title: "Szpilowski Lukasz – Frontend Developer Portfolio",
+    description: "Portfolio of Szpilowski Lukasz – frontend Developer. Modern, accessible web applications, React, Next.js, TypeScript.",
     images: ["/images/og-image.png"],
     creator: "@lszpilowski",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Szpilowski Lukasz",
+  jobTitle: "Frontend Developer",
+  url: "https://lszpilowski.com",
+  sameAs: [
+    "https://github.com/lszpilowski",
+    "https://www.linkedin.com/in/lszpilowski/",
+  ],
 };
 
 export default function RootLayout({
@@ -54,8 +80,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className="antialiased radial-gradientt">
+    <html lang="en" suppressHydrationWarning className={`scroll-smooth ${syne.variable}`}>
+      <head>
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="antialiased">
         <Providers>
           {children}
         </Providers>
