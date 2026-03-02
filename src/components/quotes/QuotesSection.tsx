@@ -1,9 +1,7 @@
 "use client";
 
-
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { quotes } from "./data";
-
 
 export const QuotesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,8 +47,9 @@ export const QuotesSection = () => {
 
   return (
     <section
-    id="happiness"
+    id="quotes"
       ref={sectionRef}
+      aria-label="Inspirational quotes"
       className={`w-full max-w-3xl mx-auto px-6 pt-24 transition-all duration-400 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
@@ -61,6 +60,8 @@ export const QuotesSection = () => {
         </span>
         
         <p
+          aria-live="polite"
+          aria-atomic="true"
           className={`text-2xl md:text-3xl text-center font-light leading-relaxed px-8 transition-opacity duration-700 ${fade ? "opacity-100" : "opacity-0"}`}
         >
           {quotes[quoteIndex].text}
