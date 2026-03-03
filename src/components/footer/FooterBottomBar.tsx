@@ -14,7 +14,7 @@ export function FooterBottomBar() {
   const [credentialsOpen, setCredentialsOpen] = useState(false);
 
   return (
-    <div className="border-t border-foreground/10 w-full max-w-screen-xl mx-auto px-4 md:px-20 h-16 flex flex-row items-center justify-between gap-4">
+    <div className="shrink-0 border-t border-foreground/10 w-full max-w-screen-xl mx-auto px-4 md:px-20 h-16 flex flex-row items-center justify-between gap-4">
       <ul className="flex items-center gap-5" aria-label="Social media">
         {socials.map((social, index) => (
           <li key={index} className="shrink-0">

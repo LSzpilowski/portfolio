@@ -25,7 +25,7 @@ function FixedInfo() {
         <MacbookScrollZoom />
       </div>
 
-      <div className="flex flex-col">
+      <div className="relative z-10 flex flex-col">
         <div className="flex flex-col gap-3">
           <p className="text-5xl font-bold">Szpilowski Lukasz</p>
           <p className="text-xl font-bold">Frontend Developer</p>
