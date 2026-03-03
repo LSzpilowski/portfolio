@@ -4,19 +4,24 @@ import { useEffect, useRef, useState } from "react";
 import AboutMe from "@/components/about/AboutMe";
 import FixedInfo from "@/components/fixed-info/FixedInfo";
 import { ProjectScroller } from "@/components/projects/ProjectScroller";
+import { MobileProjectSlider } from "@/components/projects/MobileProjectSlider";
 import { ExperienceSection } from "@/components/experience/ExperienceSection";
 import { BouncingPattern } from "@/components/background/BouncingPattern";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import { AnimationToggle } from "@/components/background/AnimationToggle";
 import { ModeToggle } from "@/components/background/ModeToggle";
 import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
+  const isMobile = useIsMobile();
   const [contactVisible, setContactVisible] = useState(true);
   const [inContact, setInContact] = useState(false);
   const [clicking, setClicking] = useState(false);
   const prevInContact = useRef(false);
 
   useEffect(() => {
+    if (isMobile === null) return;
+
     const projects = document.getElementById("projects");
     const contact = document.getElementById("contact");
     if (!projects || !contact) return;
@@ -44,7 +49,7 @@ export default function Home() {
       projectsObserver.disconnect();
       contactObserver.disconnect();
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <>
@@ -83,8 +88,8 @@ export default function Home() {
         </section>
       </div>
       
-      <div id="projects" className="w-full relative bg-black dark:bg-white">
-        <ProjectScroller />
+      <div className="w-full relative bg-black dark:bg-white">
+        {isMobile === null ? null : isMobile ? <MobileProjectSlider /> : <ProjectScroller />}
       </div>
 
       <Footer />
