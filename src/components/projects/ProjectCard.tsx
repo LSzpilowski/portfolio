@@ -92,7 +92,12 @@ export function ProjectCard({ project, isFirst }: { project: IProject; isFirst?:
                 loading="lazy"
               />
             </div>
-            <p className="text-sm leading-relaxed text-foreground/70">{project.introExcerpt}</p>
+            
+            {project.introExcerpt.map((paragraph, i) => (
+              <p key={i} className="text-sm leading-relaxed text-foreground/70">
+                {paragraph}
+              </p>
+            ))}
             <button
               onClick={(e) => { e.preventDefault(); setExpanded(true); }}
               className="underline-ltr self-start text-md font-bold font-mono tracking-widest uppercase mt-1 flex flex-row items-center gap-2"
